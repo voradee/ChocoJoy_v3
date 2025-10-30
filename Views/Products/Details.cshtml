@@ -1,0 +1,24 @@
+@model ChocoJoy.Models.Product
+@{ ViewData["Title"] = Model.Name; }
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="@Model.ImageUrl" class="img-fluid rounded-4 shadow-sm" alt="@Model.Name" style="object-fit:cover;"/>
+            </div>
+            <div class="col-md-6">
+                <h2 class="fw-bold">@Model.Name</h2>
+                <p class="lead text-muted">@Model.Description</p>
+                <p>@Model.LongDescription</p>
+                <h4 class="text-success fw-bold">$@Model.Price</h4>
+                <div class="mt-4">
+                    <button class="btn btn-choco me-2">Add to Cart 🛒</button>
+                    <button class="btn btn-success">Buy Now 💳</button>
+                </div>
+                <div class="mt-4">
+                    <a asp-action="Index" class="btn btn-outline-secondary">← Back to Chocolates</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

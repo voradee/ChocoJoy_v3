@@ -1,0 +1,14 @@
+@{ ViewData["Title"] = "Register"; }
+<div class="login-bg" style="background-image:url('/images/bg-login.jpg');padding:60px 0;background-size:cover;background-position:center;">
+  <div class="login-card p-4 shadow-sm" style="max-width:420px;margin:0 auto;background:rgba(255,255,255,0.95);border-radius:12px;">
+    <h3 class="mb-3">Create an account</h3>
+    <form method="post" asp-action="Register">
+      <div class="mb-3"><input name="username" class="form-control" placeholder="Choose a username" required/></div>
+      <div class="mb-3"><input name="email" type="email" class="form-control" placeholder="Email address" required/></div>
+      <div class="mb-3"><input name="password" type="password" class="form-control" placeholder="Password" required/></div>
+      <button class="btn btn-dark w-100">Register</button>
+    </form>
+    <hr/>
+    <p class="text-center">Already have an account? <a href="/Account/Login">Login</a></p>
+  </div>
+</div>

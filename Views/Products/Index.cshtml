@@ -1,0 +1,35 @@
+@model IEnumerable<ChocoJoy.Models.Product>
+
+@{
+    ViewData["Title"] = "Our Chocolates";
+}
+
+<style>
+    .page-bg { background: linear-gradient(to right, #3E2723, #5D4037); color: #fff; }
+    .card { background-color: #fffaf0; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    .btn-choco { background-color: #6D4C41; color: #fff; border: none; }
+    .btn-choco:hover { background-color: #4E342E; color: #FFD54F; }
+</style>
+
+<div class="container mt-3 page-bg p-4 rounded-3">
+    <h2 class="text-center mb-4 fw-bold">🍫 Explore Our Premium Chocolates</h2>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <img src="@product.ImageUrl" class="card-img-top rounded-top-4" alt="@product.Name" style="height:250px;object-fit:cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">@product.Name</h5>
+                        <p class="card-text text-muted small">@product.Description</p>
+                        <p class="text-success fw-bold fs-5">$@product.Price</p>
+                        <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-choco w-100 mb-2">View Details</a>
+                        <button class="btn btn-outline-warning w-100 mb-2">Add to Cart 🛒</button>
+                        <button class="btn btn-success w-100">Buy Now 💳</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
