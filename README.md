@@ -1,1 +1,1 @@
-# ChocoJoy v3 - ready-to-run\n\nRun:\n1. Install .NET 9 SDK\n2. dotnet restore\n3. dotnet build\n4. dotnet run\nOpen https://localhost:5001\n\nAdmin login: admin / 12345\n
+# ChocoJoy v3 
